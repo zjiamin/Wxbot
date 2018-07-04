@@ -9,4 +9,18 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <!--充分利用状态栏，让状态栏跟背景图片融合我们需要把图片和他的所有父控件都要设置一个属性：
+    android: fitsSysytemWindows="true"
+    然后还必须在程序的主题中将状态栏的颜色设置成透明的才行,然后别忘了在AndroidManifest.xml中
+    给FruitActivity设置FruitTheme
+
+    这里的FruitActivityTheme主题内不是空的，因为Android 5.0之前的系统无法指定状态栏的颜色，
+    在 values-v21/styles.xml中设置的是Android 5.0及以后的系统都可以指定状态栏的颜色-->
+    <style name="FruitActivityTheme" parent="AppTheme">
+    </style>
+
 </resources>
