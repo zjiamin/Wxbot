@@ -1,21 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+
     <item
+        android:id="@+id/search"
+        android:title="Backup"
+        android:icon="@mipmap/iconmonstr_search_white"
+        app:showAsAction="always"/>
+
+    <!--<item
         android:id="@+id/backup"
         android:title="Backup"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/iconmonstr_backup"
         app:showAsAction="never"/>
     <item
         android:id="@+id/delete"
         android:title="Delete"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/iconmonstr_trash"
         app:showAsAction="never"/>
     <item
         android:id="@+id/settings"
         android:title="Settings"
-        android:icon="@mipmap/ic_launcher"
-        app:showAsAction="never"/>
+        android:icon="@mipmap/iconmonstr_settings_white"
+        app:showAsAction="never"/>-->
 
 
 </menu>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/colorDarkWhite"/>
+
+    <LinearLayout
+        android:id="@+id/llayout_news"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="5dp">
+
+        <ImageView
+            android:id="@+id/news_pic"
+            android:layout_width="150dp"
+            android:layout_height="120dp"
+            android:layout_gravity="left"
+            android:src="@mipmap/kaka"/>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:gravity="center"
+            android:layout_gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/news_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorBlack"
+                android:textSize="16sp"
+                android:text="半场战报：比利时1-0英格兰"/>
+
+            <TextView
+                android:id="@+id/news_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorDarkWhite"
+                android:textSize="14sp"
+                android:lines="2"
+                android:ellipsize="end"
+                android:text="双方互有攻守并制造了有威胁的机会，默尼耶闪击助比利时领先双方互有攻守并制造了有威胁的机会，默尼耶闪击助比利。"/>
+
+            <TextView
+                android:id="@+id/news_comment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:textSize="12sp"
+                android:textColor="@color/colorDarkWhite"
+                android:layout_marginTop="10dp"
+                android:text="共999条评论"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/colorDarkWhite"/>
+
+
+
+</LinearLayout>

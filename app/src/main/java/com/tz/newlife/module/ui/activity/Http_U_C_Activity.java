@@ -28,7 +28,7 @@ public class Http_U_C_Activity extends BaseActivity {
         initEvent();
     }
 
-    private void initView() {
+    protected void initView() {
         btn_send_request = (Button) findViewById(R.id.btn_send_request);
         tv_response = (TextView) findViewById(R.id.tv_response);
     }

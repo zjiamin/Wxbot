@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.tz.newlife.module.ui.activity.NewMainActivity">
+
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <!--CoordinatorLayout是一个加强版的FrameLayout
+            普通情况下跟FrameLayout基本一致，事实上CoordinatorLayout
+            可以监听其所有子控件的各种事件，然后自动帮助我们做出
+            最为合理的响应，比如底部的FloatingActionBar点击弹出
+            一个SnackBar，在FrameLayout中FloatingActionBar会被
+            弹出的Snackar遮挡，这时就需要吧FrameLayout换成CoordinatorLayout，
+            此时FloatingActionBar会随着弹出的控件向上偏移直到它消失后再回到
+            初始位置，比较炫酷-->
+
+        <android.support.design.widget.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                android:layout_gravity="center"
+                android:gravity="center"
+                app:contentInsetLeft="0dp"
+                app:contentInsetRight="0dp"
+                app:contentInsetStart="0dp"
+                app:contentInsetEnd="0dp"
+                app:layout_scrollFlags="scroll|enterAlways|snap">
+                <!--
+                    1.  app:layout_scrollFlags="scroll|enterAlways|snap"
+                        这个属性加上后toolBar会随着滑动控件RecyclerView的
+                        向上滑动隐藏起来，向下滑动重新出现，但是在Viewpager中其他页面
+                        没有滑动控件，在有滑动控件的页面滑动上去后再横向滑动到另一个
+                        没有滑动控件的页面后ToolBar不能滑回来的bug,所以先注释掉
+                    2.  toolBar左侧默认有个按钮和title，不去title就把放在里面的控件
+                        如TabLayout个挤到一边去了，如果在类代码中去掉title则TabLayout
+                        有缩回去靠左了，暂时没有啥好办法，为了适配屏幕尽量减少设置固定dp-->
+
+                <android.support.design.widget.TabLayout
+                    android:id="@+id/tab_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    app:tabBackground="@color/colorPrimary"
+                    app:tabGravity="fill"
+                    app:tabIndicatorColor="@color/colorWhite"
+                    app:tabIndicatorHeight="0dp"
+                    app:tabSelectedTextColor="@color/colorWhite"
+                    app:tabTextColor="@color/colorDarkWhite"
+                    app:layout_scrollFlags="scroll|enterAlways|snap">
+                    <!--tabMode
+                        tab_item个数少时候用fixed表示固定的tab
+                        个数多(大于4,5个时)的时候用scrollable表示可以滚动
+                        (居中问题：有说法是当确定个数时就不要加
+                        app:tabMode="fixed"了)
+                        tabSelectedTextColor时选中文字颜色
+                        tabTextColor是默认文字颜色
+                        tabGravity是tab_item分散模式：center居中
+                                                     fill分散
+                        tabIndicatorColor是选中后下面的横线颜色
+                        tabIndicatorHeight是下面横线的高度-->
+
+
+
+                </android.support.design.widget.TabLayout>
+
+            </android.support.v7.widget.Toolbar>
+
+
+
+        </android.support.design.widget.AppBarLayout>
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        </android.support.v4.view.ViewPager>
+
+
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="16dp"
+            android:src="@mipmap/iconmonstr_search_white"
+            android:elevation="8dp"
+            app:borderWidth="0dp"
+            android:backgroundTint="@color/colorPrimary"
+            app:rippleColor="#bcbcbc"/>
+
+    </android.support.design.widget.CoordinatorLayout>
+
+    <android.support.design.widget.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:menu="@menu/nav_menu"
+        app:headerLayout="@layout/nav_header"/>
+
+
+</android.support.v4.widget.DrawerLayout>

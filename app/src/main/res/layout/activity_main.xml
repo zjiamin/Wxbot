@@ -11,7 +11,8 @@
         android:layout_height="wrap_content"
         android:text="edittext_main"
         android:textColor="#000000"
-        android:textSize="20sp"/>
+        android:textSize="20sp"
+        android:maxLines="2"/>
 
     <Button
         android:id="@+id/btn_to_http"
@@ -19,14 +20,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAllCaps="false"
-        android:layout_marginBottom="20dp"/>
+        android:layout_marginBottom="20dp" />
 
     <Button
         android:id="@+id/intent_btn_main"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
-        android:text="click to intent" />
+        android:text="click to intent"
+        android:textAllCaps="false"/>
+    <!--Button的android:textAllCaps="false"
+        属性为false表示不要自动切换大小写-->
 
     <Button
         android:id="@+id/intent_result_btn_main"

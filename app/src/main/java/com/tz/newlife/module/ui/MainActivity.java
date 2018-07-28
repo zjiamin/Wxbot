@@ -2,7 +2,6 @@ package com.tz.newlife.module.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -10,7 +9,7 @@ import android.widget.EditText;
 
 import com.tz.newlife.R;
 import com.tz.newlife.module.ui.activity.Http_U_C_Activity;
-import com.tz.newlife.module.ui.activity.PullRefeshActivity;
+import com.tz.newlife.module.ui.activity.NewMainActivity;
 import com.tz.newlife.module.ui.activity.SecondActivity;
 import com.tz.newlife.module.base.BaseActivity;
 import com.tz.newlife.module.ui.activity.WebViewActivity;
@@ -32,7 +31,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_wide_activity);
         if (savedInstanceState != null) {
             et_main.setText(savedInstanceState.getString("main_data_key"));
         }
@@ -97,7 +96,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
 
             case R.id.btn_to_refresh:
                 startActivity(new Intent(MainActivity.this,
-                        PullRefeshActivity.class));
+                        NewMainActivity.class));
 
             case R.id.stop_btn_main:
                 //销毁Activities,杀死进程

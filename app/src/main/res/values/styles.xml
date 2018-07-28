@@ -7,6 +7,9 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowBackground">@color/colorWhite</item>
+        <item name="toolbarStyle">@style/MyToolBarStyle</item>
+
     </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
@@ -22,5 +25,26 @@
     在 values-v21/styles.xml中设置的是Android 5.0及以后的系统都可以指定状态栏的颜色-->
     <style name="FruitActivityTheme" parent="AppTheme">
     </style>
+
+    <style name="netease_toolbar_subtitle" parent="@style/TextAppearance.Widget.AppCompat.Toolbar.Subtitle">
+        <item name="android:textColor">#eeeeee</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="netease_toolbar_title" parent="@style/TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">17sp</item>
+    </style>
+    
+    <style name="MyEditTExt" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:colorControlNormal">@color/colorDarkWhite</item>
+        <item name="android:colorControlActivated">@color/colorDarkWhite</item>
+    </style>
+    
+    <style name="MyToolBarStyle" parent="Widget.AppCompat.Toolbar">
+        <item name="titleMargin">0dp</item>
+        <item name="contentInsetStart">0dp</item>
+    </style>
+
 
 </resources>

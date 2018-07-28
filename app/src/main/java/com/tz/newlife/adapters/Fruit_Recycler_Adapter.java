@@ -48,7 +48,11 @@ public class Fruit_Recycler_Adapter extends RecyclerView.Adapter<Fruit_Recycler_
         View view = LayoutInflater.from(mContext).inflate(R.layout.fruit_item,
                 parent, false);
 
-        //处理RecyclerView中的CardView的点击事件
+        /*处理RecyclerView中的CardView的点击事件
+        RecyclerView直接摒弃了ListView一样的直接给子项注册点击事件的方式，而是
+        将整个子项解放了出来，所有得到点击事件都是由具体的view去注册，
+        ViewHolder.view.setOnClickListener
+        */
         final  ViewHolder holder = new ViewHolder(view);
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -53,15 +53,16 @@ import com.tz.newlife.module.ui.ActivityController;
 */
 
 public abstract class BaseActivity extends AppCompatActivity {
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Log.d("BaseActivity", getClass().getSimpleName());
-        Toast.makeText(BaseActivity.this, "This is " + getClass().getSimpleName(),
-                Toast.LENGTH_SHORT).show();
+
         ActivityController.addActivity(this);
 
     }
+
 
     @Override
     protected void onDestroy() {

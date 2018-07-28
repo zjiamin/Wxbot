@@ -40,7 +40,7 @@ public class SecondActivity extends BaseActivity implements View.OnClickListener
         outState.putString("data_key", tempData);
     }
 
-    private void initView() {
+    protected void initView() {
         et_sec = (TextView) findViewById(R.id.et_second);
         btn_sec_result_return = (Button) findViewById(R.id.btn_sec_result_return);
     }

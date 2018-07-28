@@ -18,7 +18,7 @@ public class WebViewActivity extends BaseActivity {
         initEvent();
     }
 
-    private void initView() {
+    protected void initView() {
         webView = (WebView) findViewById(R.id.web_view);
         webView.getSettings().setJavaScriptEnabled(true);
         webView.setWebViewClient(new WebViewClient());

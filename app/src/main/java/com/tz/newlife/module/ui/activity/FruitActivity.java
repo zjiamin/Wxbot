@@ -4,18 +4,22 @@ import android.content.Intent;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.tz.newlife.R;
+import com.tz.newlife.module.base.BaseActivity;
 
-public class FruitActivity extends AppCompatActivity {
+public class FruitActivity extends BaseActivity implements View.OnClickListener {
     public static final String FRUIT_NAME = "fruit_name";
     public static final String FRUIT_IMAGE_ID = "fruit_image_id";
     private AppBarLayout appBarLayout;
@@ -34,7 +38,13 @@ public class FruitActivity extends AppCompatActivity {
         initEvent();
     }
 
-    private void initView() {
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true ;
+    }
+
+    protected void initView() {
         Intent intent = getIntent();
         String fruitName = intent.getStringExtra(FRUIT_NAME);
         int fruitImageId = intent.getIntExtra(FRUIT_IMAGE_ID, 0);
@@ -67,7 +77,7 @@ public class FruitActivity extends AppCompatActivity {
     }
 
     private void initEvent() {
-
+        fab.setOnClickListener(this);
     }
 
     @Override
@@ -76,8 +86,33 @@ public class FruitActivity extends AppCompatActivity {
             case android.R.id.home:
                 finish();
                 return true;
+            case R.id.add_item:
+                Toast.makeText(FruitActivity.this, "Add clicked",
+                        Toast.LENGTH_SHORT).show();
+                break;
 
+            case R.id.remove_item:
+                Toast.makeText(FruitActivity.this, "Remove clicked",
+                        Toast.LENGTH_SHORT).show();
+            default:
         }
-        return super.onOptionsItemSelected(item);
+        return true;
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.fab_fruit:
+                Snackbar.make(fab, "Data deleted", Snackbar.LENGTH_SHORT)
+                        .setAction("Undo", new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                Toast.makeText(FruitActivity.this, "Data restored",
+                                        Toast.LENGTH_SHORT).show();
+                            }
+                        }).show();
+                break;
+                //傻人有傻福，傻逼没有。
+        }
     }
 }
